@@ -1,0 +1,32 @@
+{
+	"name": "Beta Website Svelte",
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-24-bookworm",
+	
+	"features": {
+		"ghcr.io/devcontainers/features/git:1": {}
+	},
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"svelte.svelte-vscode",
+				"bradlc.vscode-tailwindcss",
+				"dbaeumer.vscode-eslint",
+				"esbenp.prettier-vscode"
+			],
+			"settings": {
+				"editor.defaultFormatter": "esbenp.prettier-vscode",
+				"editor.formatOnSave": true,
+				"[svelte]": {
+					"editor.defaultFormatter": "svelte.svelte-vscode"
+				}
+			}
+		}
+	},
+
+	"forwardPorts": [5173],
+
+	"postCreateCommand": "npm install && npx playwright install --with-deps",
+
+	"remoteUser": "node"
+}
